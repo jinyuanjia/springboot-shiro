@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 该文件存放CRUD的sql语句 -->
+<mapper namespace="com.itheima.mapper.UserMapper">
+	
+	<select id="findByName" parameterType="java.lang.String" resultType="user">
+		SELECT
+			ID,NAME,PASSWORD
+		FROM USER
+		WHERE name = #{name}
+	</select>
+	
+	<select id="findById" parameterType="java.lang.Integer" resultType="user">
+		SELECT
+			ID,NAME,PASSWORD,PERMS
+		FROM USER
+		WHERE id = #{id}
+	</select>
+</mapper>
